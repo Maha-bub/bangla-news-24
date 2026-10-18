@@ -8,8 +8,8 @@ const Navbar = () => {
         })
     console.log(date)
     return (
-        <div className='container'>
-            <div className='flex align-items-center text-center gap-1'>
+        <div className='container relative mx-auto flex max-w-7xl items-center justify-center py-5'>
+            <div className='flex align-items-center items-center gap-1 w--10/12 '>
                 <Image
                     src={'/logo.webp'}
                     alt=""
@@ -18,9 +18,13 @@ const Navbar = () => {
 
                 </Image>
                 <div>
-                    <h2 className='text-3xl font-bold'>Bangla News 24</h2>
+                    <h2 className='text-3xl font-bold text-red-700'>Bangla News 24</h2>
                     <p>{date}</p>
                 </div>
+            </div>
+            <div className='absolute right-0 flex items-center gap-2'>
+                <button className='btn'>SignIn</button>
+                <button className='btn'>SignUp</button>
             </div>
 
         </div>
