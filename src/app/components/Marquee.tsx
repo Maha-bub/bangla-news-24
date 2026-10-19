@@ -10,7 +10,7 @@ const Marquee = async () => {
     const resData = await res.json();
     const headlines: HeadlinesType = resData.data;
     return (
-        <div className="bg-red-700 container" >
+        <div className="bg-red-700 container m-auto" >
             <div className="flex  max-w-7xl m-auto">
                 <div className="bg-red-800 text-white py-1 px-3" >সর্বশেষ </div>
                 <MarqueeText direction="right" duration={10}>

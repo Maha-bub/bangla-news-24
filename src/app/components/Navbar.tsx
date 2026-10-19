@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import NavLinks from './NavLinks';
-import Marquee from './Marquee';
-// import Logo from '/logo.webp';
+
 
 const Navbar = () => {
     const date = new Date().toLocaleDateString('bn-BD',
@@ -34,7 +33,7 @@ const Navbar = () => {
 
 
             <NavLinks></NavLinks>
-            <Marquee></Marquee>
+
         </div>
     );
 };

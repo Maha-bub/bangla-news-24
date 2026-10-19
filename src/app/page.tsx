@@ -1,7 +1,14 @@
+import Marquee from "./components/Marquee";
+
 export default function Home() {
   return (
     <div>
-      ‘ভালো করে বাজাও, আরতি দেব’ বলেই মৃত্যুর কোলে ঢলে পড়লেন অর্চনা রানী
+      <Marquee></Marquee>
+
+      <div>
+
+      </div>
+      ‘ভালো বলেই মৃত্যুর কোলে ঢলে পড়লেন অর্চনা রানী
     </div>
   );
 }
