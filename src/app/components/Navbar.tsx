@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import NavLinks from './NavLinks';
+import Marquee from './Marquee';
 // import Logo from '/logo.webp';
 
 const Navbar = () => {
@@ -28,10 +29,12 @@ const Navbar = () => {
                     <button className=" btn-success">সাইন ইন</button>
                     <button className="btn bg-red-500 text-white">সাইন আপ</button>
                 </div>
+
             </div>
 
 
             <NavLinks></NavLinks>
+            <Marquee></Marquee>
         </div>
     );
 };

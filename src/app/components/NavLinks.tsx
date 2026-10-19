@@ -1,10 +1,17 @@
 import Link from 'next/link';
-import React from 'react';
+interface NavLinksType {
+    id:number,
+    slug: string,
+    title: string,
+    topicId: string | null,
+    url: string,
+    scrapable: boolean
+}
 
 const NavLinks = async () => {
     const res = await fetch('https://news-api-v2.vercel.app/api/categories')
     const resData = await res.json();
-    const navLinks = resData.data;
+    const navLinks: NavLinksType[] = resData.data;
     const fileteredNavLinks = navLinks.filter(items => items.scrapable)
     console.log(fileteredNavLinks);
 
