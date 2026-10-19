@@ -5,10 +5,16 @@ export default function Home() {
     <div>
       <Marquee></Marquee>
 
-      <div>
+      <div className="grid grid-cols-3 gap-4 max-w-7xl m-auto py-5">
+        <div className="col-span-2 bg-green-500">
+          sdgasdg
+        </div>
+        <div className="col-span-1 bg-red-200">
+
+        </div>
 
       </div>
-      ‘ভালো বলেই মৃত্যুর কোলে ঢলে পড়লেন অর্চনা রানী
+
     </div>
   );
 }
