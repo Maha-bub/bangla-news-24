@@ -7,7 +7,7 @@ const Navbar = () => {
         {
             dateStyle: "full",
         })
-    console.log(date)
+
     return (
         <div >
             <div className='container relative mx-auto flex max-w-7xl items-center justify-center py-5'>

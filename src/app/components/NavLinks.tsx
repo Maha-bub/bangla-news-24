@@ -1,6 +1,6 @@
 import Link from 'next/link';
 interface NavLinksType {
-    id:number,
+    id: number,
     slug: string,
     title: string,
     topicId: string | null,
@@ -18,7 +18,7 @@ const NavLinks = async () => {
     return (
         <div className='flex gap-4 justify-center'>
             {
-                fileteredNavLinks.map(navLinks => <Link key={navLinks.id} href={'/navLinks.slug'}>{navLinks.title}</Link>)
+                fileteredNavLinks.map((navLinks, ind) => <Link key={ind} href={'/navLinks.slug'}>{navLinks.title}</Link>)
             }
 
         </div>
