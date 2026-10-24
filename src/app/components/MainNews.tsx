@@ -29,6 +29,7 @@ const MainNews = async ({ news }) => {
                     />
                 </figure>
                 <div className="card-body">
+                    <span className="text-sm font-bold badge text-red-500">প্রধান খবর</span>
                     <span className='text-black font-bold'>{mainNews.title}</span>
                     <h2 className="card-title">{mainNewsItem.title}</h2>
                     <p>{mainNewsItem.description}</p>
@@ -41,6 +42,7 @@ const MainNews = async ({ news }) => {
                         key={item.id ?? item.title}
                         className="rounded-lg bg-base-100 px-2 pt-2 shadow-sm transition-shadow hover:shadow-md"
                     >
+                        <span className="text-sm font-bold badge text-red-500">প্রধান খবর</span>
                         <h2 className="text-base font-semibold leading-relaxed">
                             <span className="mr-2 font-bold text-black">
                                 {index + 1}.
