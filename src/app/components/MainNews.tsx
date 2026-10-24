@@ -3,21 +3,27 @@ import React from 'react';
 
 const MainNews = async ({ news }) => {
 
-    console.log(news)
+    // console.log(news)
     const mainNews = news.data;
+
+
     // const mainNewsArray = mainNews.filter((item) => item.scrapable);
     // const mainNewsItem = mainNewsArray[0];
     const mainNewsItem = mainNews[0].articles[0];
+    // console.log('First main news', mainNewsItem);
+
+
     const otherNewsItems = mainNews[0].articles.slice(1, 5);
-    console.log(otherNewsItems)
+
+
 
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex gap-3 items-jucenter stify-center">
             <div className="card bg-base-100 w-96 shadow-sm">
                 <figure>
                     <Image
-                        src={mainNewsItem.image}
-                        alt="Shoes"
+                        src={mainNewsItem.imageUrl}
+                        alt="imageAlt"
                         width={500}
                         height={300}
                     />
@@ -28,17 +34,23 @@ const MainNews = async ({ news }) => {
                     <p>{mainNewsItem.description}</p>
                 </div>
             </div>
-            <div className="grid gap-4">
-                {otherNewsItems.map((item, index) => (
-                    <div key={index} className="bg-base-100 shadow-sm">
 
-                        <div className="card-body">
-                            <h2 className="card-title"> <span className='text-black font-bold'>{index + 1}.</span>{item.title}</h2>
-                            {/* <p>{item.description}</p> */}
-                        </div>
+            <div className="grid gap-3">
+                {otherNewsItems.map((item, index) => (
+                    <div
+                        key={item.id ?? item.title}
+                        className="rounded-lg bg-base-100 px-2 pt-2 shadow-sm transition-shadow hover:shadow-md"
+                    >
+                        <h2 className="text-base font-semibold leading-relaxed">
+                            <span className="mr-2 font-bold text-black">
+                                {index + 1}.
+                            </span>
+                            {item.title}
+                        </h2>
                     </div>
                 ))}
             </div>
+
         </div>
     );
 };

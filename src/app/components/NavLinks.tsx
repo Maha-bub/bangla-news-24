@@ -13,7 +13,7 @@ const NavLinks = async () => {
     const resData = await res.json();
     const navLinks: NavLinksType[] = resData.data;
     const fileteredNavLinks = navLinks.filter(items => items.scrapable)
-    console.log(fileteredNavLinks);
+    // console.log(fileteredNavLinks);
 
     return (
         <div className='flex gap-4 justify-center'>
