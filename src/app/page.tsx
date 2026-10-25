@@ -1,5 +1,6 @@
 import MainNews from "./components/MainNews";
 import Marquee from "./components/Marquee";
+import OthersNews from "./components/OthersNews";
 
 export default async function Home() {
   const res = await fetch('https://news-api-v2.vercel.app/api/news/sections')
@@ -10,7 +11,7 @@ export default async function Home() {
   // const mainNewsArray = mainNews.filter((item) => item.scrapable);
   // const mainNewsItem = mainNewsArray[0];
   const otherNewsItems = mainNews.slice(1);
-  console.log("skip first news", otherNewsItems)
+  // console.log("skip first news", otherNewsItems)
 
   return (
     <div>
@@ -19,9 +20,8 @@ export default async function Home() {
       <div className="grid grid-cols-3 gap-4 max-w-7xl m-auto">
         <div className="col-span-2">
           <MainNews news={data}></MainNews>
-          <div>
-            { }
-          </div>
+          <OthersNews news={otherNewsItems}></OthersNews>
+
         </div>
         <div className="col-span-1 bg-red-200">
 

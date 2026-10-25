@@ -22,12 +22,8 @@ const MainNews = async ({ news }: { news: { data: MainNewsType[] } }) => {
     // console.log(news)
     const mainNews = news.data;
 
-
-    // const mainNewsArray = mainNews.filter((item) => item.scrapable);
-    // const mainNewsItem = mainNewsArray[0];
     const mainNewsItem = mainNews[0].articles[0];
-    // console.log('First main news', mainNewsItem);
-    const othersMainNewsArticles = mainNews[0].articles.slice(1,5);
+    const othersMainNewsArticles = mainNews[0].articles.slice(1, 5);
     // console.log("skip first news", othersMainNewsArticles)
 
     return (
@@ -40,7 +36,7 @@ const MainNews = async ({ news }: { news: { data: MainNewsType[] } }) => {
                             alt="imageAlt"
                             width={500}
                             height={300}
-                        /> 
+                        />
                     </figure>
                     <div className="card-body">
                         <span className='text-sm font-bold badge text-red-500'>{mainNewsItem.category}</span>
