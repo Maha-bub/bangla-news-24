@@ -4,6 +4,14 @@ import Marquee from "./components/Marquee";
 export default async function Home() {
   const res = await fetch('https://news-api-v2.vercel.app/api/news/sections')
   const data = await res.json()
+  const mainNews = data.data;
+
+
+  // const mainNewsArray = mainNews.filter((item) => item.scrapable);
+  // const mainNewsItem = mainNewsArray[0];
+  const otherNewsItems = mainNews.slice(1);
+  console.log("skip first news", otherNewsItems)
+
   return (
     <div>
       <Marquee></Marquee>

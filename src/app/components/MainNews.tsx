@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import OthersSectionNews from './OthersSectionNews';
 interface MainNewsType {
     id: number,
     title: string,
@@ -13,7 +12,8 @@ interface MainNewsType {
         description: string,
         imageUrl: string,
         url: string,
-        scrapable: boolean
+        scrapable: boolean,
+        category: string
     }[]
 }
 
@@ -27,8 +27,8 @@ const MainNews = async ({ news }: { news: { data: MainNewsType[] } }) => {
     // const mainNewsItem = mainNewsArray[0];
     const mainNewsItem = mainNews[0].articles[0];
     // console.log('First main news', mainNewsItem);
-    const otherNewsItems = mainNews.slice(1);
-    console.log("skip first news", otherNewsItems)
+    const othersMainNewsArticles = mainNews[0].articles.slice(1,5);
+    // console.log("skip first news", othersMainNewsArticles)
 
     return (
         <div>
@@ -40,22 +40,22 @@ const MainNews = async ({ news }: { news: { data: MainNewsType[] } }) => {
                             alt="imageAlt"
                             width={500}
                             height={300}
-                        />
+                        /> 
                     </figure>
                     <div className="card-body">
-                        <span className='text-sm font-bold badge text-red-500'>{mainNews[0].title}</span>
+                        <span className='text-sm font-bold badge text-red-500'>{mainNewsItem.category}</span>
                         <h2 className="card-title">{mainNewsItem.title}</h2>
                         <p>{mainNewsItem.description}</p>
                     </div>
                 </div>
 
                 <div className="grid gap-3">
-                    {otherNewsItems.map((item, index) => (
+                    {othersMainNewsArticles.map((item, index) => (
                         <div
                             key={item.id ?? item.title}
                             className="rounded-lg bg-base-100 px-2 pt-2 shadow-sm transition-shadow hover:shadow-md"
                         >
-                            <span className='text-sm font-bold badge text-red-500'>{mainNews[0].title}</span>
+                            <span className='text-sm font-bold badge text-red-500'>{item.category}</span>
                             <h2 className="text-base font-semibold leading-relaxed">
                                 <span className="mr-2 font-bold text-black">
                                     {index + 1}.
@@ -67,13 +67,6 @@ const MainNews = async ({ news }: { news: { data: MainNewsType[] } }) => {
                 </div>
 
             </div>
-            <div className="divider">
-                {
-                    // otherNewsItems.map((item, index) => <OthersSectionNews key={index} news={otherNewsItems}></OthersSectionNews>)
-                }
-            </div>
-
-
         </div>
     );
 };
