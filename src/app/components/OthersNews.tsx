@@ -31,7 +31,7 @@ const OthersNews = ({ news }: OthersNewsProps) => {
                     <h2 className='border-b-2 text-2xl font-bold border-red-500 my-3'>{item.title}</h2>
                     <div className="grid grid-cols-3 gap-3">
                         {(item.articles || []).map((article) => (
-                            <div key={article.id} className="gap-3 mt-2 items-center">
+                            <div key={article.id} className="card bg-base-100 shadow-sm gap-3 mt-2 items-center">
                                 <Image
                                     src={article.imageUrl}
                                     alt={article.title}
@@ -39,8 +39,10 @@ const OthersNews = ({ news }: OthersNewsProps) => {
 
                                     height={400}
                                 />
-                                <div>
+                                <div className="card-body p-4">
+                                    <span className='text-sm font-bold badge text-red-500'>{article.category}</span>
                                     <h2 className="text-base font-semibold leading-relaxed">{article.title}</h2>
+                                    <p className="text-sm text-gray-600">{article.description}</p>
                                 </div>
                             </div>
                         ))}
