@@ -11,7 +11,7 @@ const MostRead = async () => {
     const res = await fetch('https://news-api-v2.vercel.app/api/news/most-read')
     const data = await res.json()
     const mostReadNews: MostReadType[] = data.data;
-    console.log(mostReadNews, 'most read')
+    // console.log(mostReadNews, 'most read')
     return (
         <div className="rounded-lg card bg-base-100 px-2 py-2 shadow-sm transition-shadow hover:shadow-md">
             <p className='text-lg font-bold text-red-700'>{mostReadNews[0]?.category}</p>

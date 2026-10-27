@@ -17,8 +17,9 @@ const NavLinks = async () => {
 
     return (
         <div className='flex gap-4 justify-center'>
+            <Link href={'/'}>হোম</Link>
             {
-                fileteredNavLinks.map((navLinks, ind) => <Link key={ind} href={'/navLinks.slug'}>{navLinks.title}</Link>)
+                fileteredNavLinks.map((navLinks, ind) => <Link key={ind} href={`/category/${navLinks.slug}`}>{navLinks.title}</Link>)
             }
 
         </div>

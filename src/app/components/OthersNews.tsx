@@ -22,8 +22,7 @@ interface OthersNewsProps {
 }
 const OthersNews = ({ news }: OthersNewsProps) => {
     const othersNews = news
-    const othersNewsArticles = othersNews.map((item) => item.articles);
-    console.log('jhgfghkjhg', othersNewsArticles)
+     // console.log('jhgfghkjhg', othersNewsArticles)
     return (
         <>
             {othersNews.map((item) => (
