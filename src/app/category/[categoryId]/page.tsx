@@ -8,8 +8,9 @@ const CategoryRelatedNews = async ({ params }) => {
     const categoryWiseNews = data.data;
     console.log(categoryWiseNews)
     return (
-        <>
-            <div className="grid grid-cols-4 gap-3 mx-auto max-w-7xl bg-base-100 px-2 py-2 shadow-sm transition-shadow hover:shadow-md">
+        <div>
+            <h2 className='border-b-2 text-2xl font-bold max-w-7xl mx-auto border-red-500 my-3'>{data.title}</h2>
+            <div className="grid grid-cols-4 gap-3 mx-auto max-w-7xl bg-base-100 py-2">
                 {categoryWiseNews.map((item) => (
                     <div key={item.id} className="card bg-base-100 shadow-sm gap-3 mt-2 items-center">
                         <Image
@@ -28,7 +29,7 @@ const CategoryRelatedNews = async ({ params }) => {
                 )
                 )}
             </div>
-        </>
+        </div>
     )
 
 };
