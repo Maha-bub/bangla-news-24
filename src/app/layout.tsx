@@ -20,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-theme='light'
       className={`${notoSerifBangali.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full max-w-7xl mx-auto flex flex-col">
         <Navbar />
         {children}
         <div>Footer</div>
