@@ -1,5 +1,6 @@
 import MainNews from "./components/MainNews";
 import Marquee from "./components/Marquee";
+import MostRead from "./components/MostRead";
 import OthersNews from "./components/OthersNews";
 
 export default async function Home() {
@@ -8,10 +9,7 @@ export default async function Home() {
   const mainNews = data.data;
 
 
-  // const mainNewsArray = mainNews.filter((item) => item.scrapable);
-  // const mainNewsItem = mainNewsArray[0];
   const otherNewsItems = mainNews.slice(1);
-  // console.log("skip first news", otherNewsItems)
 
   return (
     <div>
@@ -23,7 +21,8 @@ export default async function Home() {
           <OthersNews news={otherNewsItems}></OthersNews>
 
         </div>
-        <div className="col-span-1 bg-red-200">
+        <div className="col-span-1">
+          <MostRead></MostRead>
 
         </div>
 
