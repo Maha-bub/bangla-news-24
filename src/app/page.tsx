@@ -15,13 +15,13 @@ export default async function Home() {
     <div>
       <Marquee></Marquee>
 
-      <div className="grid grid-cols-3 gap-4 max-w-7xl m-auto">
+      <div className="grid grid-cols-3 gap-4 mt-5 max-w-7xl m-auto">
         <div className="col-span-2">
           <MainNews news={data}></MainNews>
           <OthersNews news={otherNewsItems}></OthersNews>
 
         </div>
-        <div className="col-span-1">
+        <div className="col-span-1 ">
           <MostRead></MostRead>
 
         </div>

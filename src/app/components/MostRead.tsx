@@ -13,15 +13,15 @@ const MostRead = async () => {
     const mostReadNews: MostReadType[] = data.data;
     console.log(mostReadNews, 'most read')
     return (
-        <div>
-            <p className='text-sm font-bold text-red-500'>{mostReadNews[0]?.category}</p>
-            {mostReadNews.map((item) => (
+        <div className="rounded-lg card bg-base-100 px-2 py-2 shadow-sm transition-shadow hover:shadow-md">
+            <p className='text-lg font-bold text-red-700'>{mostReadNews[0]?.category}</p>
+            {mostReadNews.map((item, index) => (
                 <div
                     key={item.id}
-                    className="rounded-lg bg-base-100 px-2 pt-2 shadow-sm transition-shadow hover:shadow-md"
+                    className=" bg-base-100 px-2 py-2 "
                 >
-                    <h2 className="text-base font-semibold leading-relaxed">
-                        {item.title}
+                    <h2 className="text-base pb-2 mb-2 font-semibold leading-relaxed">
+                       <span>{index + 1}.</span> {item.title}
                     </h2>
                 </div>
             ))}
