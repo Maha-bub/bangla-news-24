@@ -26,7 +26,7 @@ const CategoryRelatedNews = async ({ params }: CategoryPageProps) => {
     console.log(categoryWiseNews)
     return (
 
-        <div>
+        <Link href={`/news/${categoryWiseNews[0]?.id}`} className='text-red-500 font-bold text-lg'>
             <h2 className='border-b-2 text-2xl font-bold  border-red-500 my-3'>{data.title}</h2>
             <div className="grid grid-cols-4 gap-3 mx-auto max-w-7xl bg-base-100 py-2">
                 {categoryWiseNews.map(item => (
@@ -49,7 +49,7 @@ const CategoryRelatedNews = async ({ params }: CategoryPageProps) => {
                 )
                 )}
             </div>
-        </div>
+        </Link>
 
     )
 
