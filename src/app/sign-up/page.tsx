@@ -15,8 +15,8 @@ const SignUpPage = () => {
             callbackURL: '/'
         })
         if (data) {
-            console.log(data),
-                redirect('/')
+            console.log('User created successfully', data)
+            redirect('/')
         }
         if (error) {
             console.log(error)

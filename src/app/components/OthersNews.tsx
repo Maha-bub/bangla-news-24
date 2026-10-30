@@ -1,5 +1,4 @@
 'use client'
-import Image from "next/image";
 import NewsCard from "./NewsCard";
 
 interface OthersNewsProps {
@@ -18,8 +17,8 @@ interface OthersNewsProps {
             url: string,
             scrapable: boolean,
             category: string
-        }
-    }
+        }[]
+    }[]
 }
 const OthersNews = ({ news }: OthersNewsProps) => {
     const othersNews = news
