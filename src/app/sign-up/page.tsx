@@ -1,22 +1,23 @@
 'use client';
 
 import { authClient } from "@/lib/auth-client";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const SignUpPage = () => {
-
+    const router = useRouter()
 
     const handleSubmit = async (e: React.SubmitEvent<HTMLElement>) => {
         e.preventDefault()
         const formData = new FormData(e.target)
-        const user = Object.fromEntries(formData.entries()) as { name: string, email: string, url: string, password: string };
+        const user = Object.fromEntries(formData.entries()) as { name: string, email: string, image: string, password: string };
+        // console.log(user)
         const { data, error } = await authClient.signUp.email({
             ...user,
-            callbackURL: '/'
+            // callbackURL: '/'
         })
         if (data) {
             console.log('User created successfully', data)
-            redirect('/')
+            router.push('/')
         }
         if (error) {
             console.log(error)
@@ -31,7 +32,9 @@ const SignUpPage = () => {
                 <input name="name" type="name" className="input w-md" placeholder="Name" />
 
                 <label className="label">ইমেজ লিংক     </label>
-                <input name="url" type="url" className="input w-md" placeholder="ImageURL" />
+                <input
+                    name="image" type="url" className="input w-full" placeholder="Paste Image URL"
+                />
 
                 <label className="label">ইমেইল</label>
                 <input name="email" type="email" className="input w-md" placeholder="Email" />

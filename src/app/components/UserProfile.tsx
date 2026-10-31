@@ -5,12 +5,23 @@ import Link from 'next/link';
 
 
 const UserProfile = () => {
-    const { data: session } = authClient.useSession()
+    // const { data: session } = authClient.useSession();
+
+    const { data: session} = authClient.useSession();
     const user = session?.user;
-    console.log(session)
+
+    console.log(user?.image);
+
+
+    // console.log("Loading:", isPending);
+    // console.log("Session:", session);
+    // console.log("User:", session?.user);
+    // console.log("Image:", session?.user?.image);
+    // console.log("Error:", error);
+
     const handleLogout = async () => {
         await authClient.signOut();
-    }
+    };
 
     return (
         <div className='absolute right-0 flex items-center gap-2'>
@@ -80,12 +91,12 @@ const UserProfile = () => {
 
                     :
                     <div className='flex gap-2 justify-center items-center' >
-                         <Link href={'/sign-in'}>
-                        <button className=" btn-success">সাইন ইন</button>
+                        <Link href={'/sign-in'}>
+                            <button className=" btn-success">সাইন ইন</button>
                         </Link>
-                      <Link href={'/sign-up'}>
-                        <button className="btn bg-red-500 text-white">সাইন আপ</button>
-                      </Link>
+                        <Link href={'/sign-up'}>
+                            <button className="btn bg-red-500 text-white">সাইন আপ</button>
+                        </Link>
                     </div>
             }
 
