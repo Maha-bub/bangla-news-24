@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import NavLinks from './NavLinks';
+import UserProfile from './UserProfile';
 
 
 const Navbar = () => {
@@ -24,10 +25,7 @@ const Navbar = () => {
                         <p>{date}</p>
                     </div>
                 </div>
-                <div className='absolute right-0 flex items-center gap-2'>
-                    <button className=" btn-success">সাইন ইন</button>
-                    <button className="btn bg-red-500 text-white">সাইন আপ</button>
-                </div>
+                <UserProfile></UserProfile>
 
             </div>
 

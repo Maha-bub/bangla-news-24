@@ -25,7 +25,7 @@ const SignUpPage = () => {
     return (
         <div>
             <form className='w-xs p-4' onSubmit={handleSubmit}>
-                <h2 className='text-2xl font-bold text-red-700 justify-center flex'>সাইন ইন করন</h2>
+                <h2 className='text-2xl font-bold text-red-700 justify-center flex'>সাইন আপ করন</h2>
 
                 <label className="label">নাম</label>
                 <input name="name" type="name" className="input w-md" placeholder="Name" />
